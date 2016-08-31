@@ -10,21 +10,62 @@
     <body>
     <ul class="accordion" id="accordion">
         <?php
+            $arr = [
+                1 => [
+                    'background_image' => '../images/1.jpg',
+                    'heading' => 'Heading 1',
+                    'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                                      ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                      reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                       nulla pariatur',
+                    'link' => 'http://google.com'
+                ],
+                2 => [
+                    'background_image' => '../images/2.jpg',
+                    'heading' => 'Heading 2',
+                    'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                                      ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                      reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                       nulla pariatur',
+                    'link' => 'http://google.com'
+                ],
+                3 => [
+                    'background_image' => '../images/3.jpg',
+                    'heading' => 'Heading 3',
+                    'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                                      ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                      reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                       nulla pariatur',
+                    'link' => 'http://google.com'
+                    ],
+                4 => [
+                    'background_image' => '../images/3.jpg',
+                    'heading' => 'Heading 4',
+                    'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                                      ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                      reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                       nulla pariatur',
+                    'link' => 'http://google.com'
+                ]
+            ];
             //made this a while loop until we start pulling from a db
             $i = 1;
-            while($i <= 4 ) { ?>
-                <li class="<?php echo 'bg'.$i ?>">
-                    <div class="heading">Guler</div>
+            foreach($arr as $value) { ?>
+                <li style="background-image:url(<?php echo $value['background_image'] ?>)">
+                    <div class="heading"><?php echo $value['heading']; ?></div>
                     <div class="bgDescription"></div>
                     <div class="description">
-                        <h2>Guler</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                            ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                            reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                            nulla pariatur.</p>
-                        <a href="#">more &rarr;</a>
+                        <h2><?php echo $value['heading']; ?></h2>
+                        <p></p>
+                        <a href="<?php echo $value['link'] ?>">more &rarr;</a>
                     </div>
                 </li>
          <?php $i++;
